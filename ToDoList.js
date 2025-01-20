@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let radioInputs = document.querySelectorAll('input[type="radio"]'); // أزرار الراديو
   let submitButton = document.getElementById("submet"); // زر الإضافة
   let listContainer = document.getElementById("list-container"); // الحاوية الرئيسية للقوائم
-
   // تفعيل زر الإضافة بناءً على الإدخال
   txtInput.addEventListener("input", enableButton);
   radioInputs.forEach((radio) =>
@@ -26,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Enter" && !submitButton.disabled) {
       e.preventDefault(); // منع السلوك الافتراضي
       addTask();
-      // استدعاء نفس دالة الإضافة
     }
   });
 
@@ -139,4 +137,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   show();
+
+  let currentIndex = 0;
+  const night = document.getElementById("DarkMode");
+  const body = document.getElementById("body");
+  const todo = document.getElementById("todo");
+  const done = document.getElementById("done");
+  const all = document.getElementById("all");
+  const day = document.getElementById("day-container");
+  const week = document.getElementById("week-container");
+  const month = document.getElementById("month-container");
+
+  night.addEventListener("click", function () {
+    currentIndex = 1 - currentIndex;
+    switch (currentIndex) {
+      case 0:
+        body.style.background =
+          "linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7, #91eae4)";
+        body.style.color = "black";
+        break;
+      case 1:
+        body.style.background =
+          "linear-gradient(90deg, #1e1e2e, #16213e, #0f3460, #53354e)";
+        body.style.color = "white";
+        break;
+    }
+  });
 });
