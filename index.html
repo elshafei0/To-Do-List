@@ -4,41 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>To Do List </title>
+    <link rel="shortcut icon" type="x-icon" href="media/icon.svg">
     <link rel="stylesheet" href="./ToDoList.css">
     <script defer src="./ToDoList.js"></script>
+    <script defer src="./new.js"></script>
 </head>
 
-<body>
-    <div class="container">
-        <div class="todotxt">
-            <h1>To Do List </h1>
-            <img src="./media/icon.svg">
-        </div>
-        <form class="additem">
-            <input id="add" type="text" placeholder="Add Your Task Here">
-            <div class="check">
-                <div>
-                    <label for="day">Day</label>
-                    <input id="day" type="radio" name="option" value="1">
-                </div>
-                <div>
-                    <label for="week">Week</label>
-                    <input id="week" type="radio" name="option" value="2">
-                </div>
-                <div>
-                    <label for="month">Month</label>
-                    <input id="month" type="radio" name="option" value="3">
-                </div>
+<body id="body">
+    <header>
+        <div class="hed">
+
+            <div class="item">
+                <img id="done" src="media/Checked.svg">
+                <label for="done">Done</label>
+            </div>
+            <div class="item">
+                <img id="all" src="media/All.svg">
+                <label for="all">All</label>
+            </div>
+            <div class="item">
+                <img id="todo" src="media/UnChecked.svg">
+                <label for="todo">To Do</label>
             </div>
             <div>
-                <button type="button" onclick="addTask()" disabled id="submet">Submit</button>
+                <img id="DarkMode" src="media/DarkMode.svg">
             </div>
-        </form>
-        <div>
-            <ul class="list-container" id="list-container">
-            </ul>
+
         </div>
+
+    </header>
+    <div class="cont">
+        <div class="container"> 
+            <div class="todotxt">
+                <h1>To Do List </h1>
+                <img src="./media/icon.svg">
+            </div>
+            <form class="additem">
+                <input id="add" type="text" placeholder="Add Your Task Here">
+                <div class="check">
+                    <div>
+                        <label for="day">Day</label>
+                        <input id="day" type="radio" name="option" value="1">
+                    </div>
+                    <div>
+                        <label for="week">Week</label>
+                        <input id="week" type="radio" name="option" value="2">
+                    </div>
+                    <div>
+                        <label for="month">Month</label>
+                        <input id="month" type="radio" name="option" value="3">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" onclick="addTask()" disabled id="submet">Submit</button>
+                </div>
+            </form>
+            <div>
+                <ul class="list-container" id="list-container">
+                </ul>
+            </div>
+       </div>
     </div>
 </body>
 
